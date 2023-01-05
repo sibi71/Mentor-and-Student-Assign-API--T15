@@ -9,9 +9,11 @@ const port = process.env.PORT || 4000 ;
 connectDB();
 
 app.use(express.json());
-app.use("/",apiRouter); 
+app.use("/api",apiRouter); 
 
-
+app.get("/",(req,res)=>{
+    res.send(`<h1>mentor and students management API</h1>`)
+})
 
 
 app.listen(port,()=>{
